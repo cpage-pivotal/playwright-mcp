@@ -1,0 +1,17 @@
+---
+applications:
+  - name: playwright-mcp-server
+    memory: 2GB
+    disk_quota: 3GB
+    instances: 1
+    buildpack: nodejs_buildpack
+    env:
+      NODE_ENV: production
+      DISPLAY: ""
+      PLAYWRIGHT_SKIP_BROWSER_DOWNLOAD: false
+      # Try to use system Chrome if available
+      PLAYWRIGHT_BROWSERS_PATH: 0
+    command: npm start
+    health-check-type: http
+    health-check-http-endpoint: /health
+    timeout: 300

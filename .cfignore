@@ -1,0 +1,11 @@
+node_modules/
+src/
+tests/
+*.ts
+*.map
+.git/
+.gitignore
+README.md
+examples/
+extension/
+utils/
