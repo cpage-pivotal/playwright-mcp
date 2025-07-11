@@ -17,8 +17,8 @@
   },
   "license": "Apache-2.0",
   "scripts": {
-    "start": "node cli.js --config config-cf.json --port $PORT",
-    "start:local": "node cli.js --port 8080 --headless --host localhost",
+    "start": "npx playwright install firefox && node cli.js --config config-cf.json --port $PORT",
+    "start:local": "npx playwright install firefox && node cli.js --port 8080 --headless --host localhost",
     "build": "tsc",
     "cf:deploy": "npm run build && cf push",
     "build:extension": "tsc --project extension",
